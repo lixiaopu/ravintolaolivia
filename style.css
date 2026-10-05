@@ -276,6 +276,9 @@ a:hover { color: var(--green-mid); }
   background: var(--bg);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
+  /* 加上下面这两行，确保卡片计算宽度统一 */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .day-header {
@@ -324,6 +327,9 @@ a:hover { color: var(--green-mid); }
   flex: 1;
   color: var(--ink);
   font-weight: 500;
+  /* 加上下面这两行，防止芬兰语长单词撑开卡片宽度 */
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .allergens {
@@ -594,8 +600,11 @@ a:hover { color: var(--green-mid); }
 
 }
 
+/* 将原来的 repeat(5, 1fr) 修改为自适应容器，确保每卡片最小宽度一致 */
 @media (min-width: 721px) {
   .lounas-grid {
-    grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-md);
   }
 }
