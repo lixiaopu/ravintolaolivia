@@ -62,7 +62,7 @@ a {
 a:hover { color: var(--green-mid); }
 
 .container {
-  width: min(1120px, 92vw);
+  width: min(1320px, 95vw);
   margin-inline: auto;
 }
 
@@ -267,17 +267,15 @@ a:hover { color: var(--green-mid); }
 .lounas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-md);
+  gap: 0.75rem; /* 减小卡片之间的间隙，从原来的 gap 给文字省出空间 */
   margin-bottom: var(--space-xl);
 }
 
 .day-card {
-  padding: var(--space-md) var(--space-md) var(--space-lg);
+  padding: 1.25rem 0.75rem 1.5rem; /* 左右 padding 从原来较大的值调小到 0.75rem */
   background: var(--bg);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  /* 加上下面这两行，确保卡片计算宽度统一 */
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -600,22 +598,20 @@ a:hover { color: var(--green-mid); }
 
 }
 
-/* ── 桌面端：恢复 5 列并优化宽度与间距 ── */
 @media (min-width: 900px) {
   .lounas-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem; /* 稍微缩小列缝隙，给内容腾出更多空间 */
+    gap: 0.85rem;
   }
 
   .day-card {
-    padding: 1.25rem 1rem 1.5rem; /* 适当调小左右 padding，避免文字被挤压 */
+    padding: 1.25rem 0.75rem 1.5rem;
     width: 100%;
     box-sizing: border-box;
   }
 }
 
-/* ── 中等屏幕（如平板）：自动排成 2~3 列，避免过窄 ── */
 @media (min-width: 550px) and (max-width: 899px) {
   .lounas-grid {
     display: grid;
