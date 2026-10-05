@@ -600,11 +600,26 @@ a:hover { color: var(--green-mid); }
 
 }
 
-/* 将原来的 repeat(5, 1fr) 修改为自适应容器，确保每卡片最小宽度一致 */
-@media (min-width: 721px) {
+/* ── 桌面端：恢复 5 列并优化宽度与间距 ── */
+@media (min-width: 900px) {
   .lounas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: var(--space-md);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem; /* 稍微缩小列缝隙，给内容腾出更多空间 */
+  }
+
+  .day-card {
+    padding: 1.25rem 1rem 1.5rem; /* 适当调小左右 padding，避免文字被挤压 */
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ── 中等屏幕（如平板）：自动排成 2~3 列，避免过窄 ── */
+@media (min-width: 550px) and (max-width: 899px) {
+  .lounas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
   }
 }
