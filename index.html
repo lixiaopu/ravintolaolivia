@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ravintola Olivia — Monipuolinen lounasbuffet Vantaalla vuodesta 2017. Viikon lounaslista ja yhteystiedot.">
+  <title>Ravintola Olivia</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Ravintola Olivia">
+        <img src="images/logo.png" alt="Ravintola Olivia" class="logo-img" width="44" height="44">
+        <span class="logo-text">
+          <span class="logo-name" data-fi="Ravintola Olivia" data-en="Ravintola Olivia">Ravintola Olivia</span>
+          <span class="logo-sub" data-fi="Vantaa" data-en="Vantaa, Finland">Vantaa</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Päänavigaatio">
+        <a href="#tarina" data-fi="Tarina" data-en="Our story">Tarina</a>
+        <a href="#lounas" data-fi="Lounaslista" data-en="Lunch menu">Lounaslista</a>
+        <a href="#kartta" data-fi="Kartta" data-en="Map">Kartta</a>
+        <a href="#yhteystiedot" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Kieli / Language">
+        <button type="button" class="lang-btn active" data-lang="fi" aria-pressed="true">FI</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="tarina" class="intro section">
+      <div class="container intro-inner">
+        <p class="intro-eyebrow" data-fi="Ravintola Olivia · Vantaa" data-en="Ravintola Olivia · Vantaa">Ravintola Olivia · Vantaa</p>
+        <p class="intro-text" data-fi="Ravintola Olivia on tarjonnut hyvää ruokaa vuodesta 2017 lähtien. Meillä on joka päivä tarjolla monipuolinen lounasbuffet, jossa yhdistyvät tutut eurooppalaiset maut ja maistuvat aasialaiset ruoat. Tervetuloa syömään vatsasi täyteen mukavassa ja rennossa tunnelmassa!" data-en="Ravintola Olivia has been serving good food since 2017. Every day we offer a varied lunch buffet that brings together familiar European flavours and delicious Asian dishes. Welcome — come enjoy a satisfying meal in a cozy and relaxed atmosphere!">Ravintola Olivia on tarjonnut hyvää ruokaa vuodesta 2017 lähtien. Meillä on joka päivä tarjolla monipuolinen lounasbuffet, jossa yhdistyvät tutut eurooppalaiset maut ja maistuvat aasialaiset ruoat. Tervetuloa syömään vatsasi täyteen mukavassa ja rennossa tunnelmassa!</p>
+        <a href="#lounas" class="intro-link" data-fi="Viikon lounaslista →" data-en="This week's lunch menu →">Viikon lounaslista →</a>
+      </div>
+    </section>
+
+    <section id="lounas" class="lounas section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label" id="lounas-week">Viikko 23</span>
+          <h2 class="section-title" data-fi="Lounaslista" data-en="Lunch menu">Lounaslista</h2>
+          <p class="section-meta" id="lounas-dates">1.6 – 5.6.2026 · Ma–Pe klo 10–15.30</p>
+        </div>
+
+        <div class="lounas-grid" id="lounas-grid"></div>
+
+        <div class="allergen-legend">
+          <p class="legend-title" data-fi="Allergeenimerkinnät" data-en="Allergen labels">Allergeenimerkinnät</p>
+          <ul class="legend-list">
+            <li><span class="tag">L</span> <span data-fi="= laktoositon" data-en="= lactose-free">= laktoositon</span></li>
+            <li><span class="tag">G</span> <span data-fi="= gluteeniton" data-en="= gluten-free">= gluteeniton</span></li>
+            <li><span class="tag">VL</span> <span data-fi="= vähälaktoosinen" data-en="= low-lactose">= vähälaktoosinen</span></li>
+            <li><span class="tag">M</span> <span data-fi="= maidoton" data-en="= dairy-free">= maidoton</span></li>
+          </ul>
+        </div>
+
+        <div class="pricing" id="lounas-pricing"></div>
+      </div>
+    </section>
+
+    <section id="kartta" class="map-section section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="section-label" data-fi="Sijainti" data-en="Location">Sijainti</span>
+          <h2 class="section-title" data-fi="Löydä meidät" data-en="Find us">Löydä meidät</h2>
+          <p class="section-meta">Tiilipojanlenkki 2, 01720 Vantaa</p>
+        </div>
+        <div class="map-wrapper">
+          <iframe
+            class="map-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.341204656301!2d24.80853357785303!3d60.27717403479236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df73da70aa85b%3A0x399edf1873df294d!2sRavintola%20Olivia!5e0!3m2!1sen!2sfi!4v1780686652544!5m2!1sen!2sfi"
+            title="Ravintola Olivia sijainti kartalla"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="yhteystiedot" class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Ravintola Olivia</span>
+        <p class="reservation-note" data-fi="Varaukset ja pöytätilaukset: ota yhteyttä puhelimitse tai sähköpostitse." data-en="Reservations and table bookings: please contact us by phone or email.">Varaukset ja pöytätilaukset: ota yhteyttä puhelimitse tai sähköpostitse.</p>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-block">
+          <h3 class="footer-heading" data-fi="Aukioloajat" data-en="Opening hours">Aukioloajat</h3>
+          <dl class="hours-list">
+            <div class="hours-row">
+              <dt data-fi="Ma–Pe" data-en="Mon–Fri">Ma–Pe</dt>
+              <dd>7:30 – 16:30</dd>
+            </div>
+            <div class="hours-row">
+              <dt data-fi="Lounas" data-en="Lunch">Lounas</dt>
+              <dd>10:00 – 15:30</dd>
+            </div>
+            <div class="hours-row">
+              <dt data-fi="La" data-en="Sat">La</dt>
+              <dd>11:30 – 16:00</dd>
+            </div>
+            <div class="hours-row">
+              <dt data-fi="Su" data-en="Sun">Su</dt>
+              <dd data-fi="Suljettu" data-en="Closed">Suljettu</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="footer-block">
+          <h3 class="footer-heading" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</h3>
+          <address class="contact-list">
+            <a href="tel:+358458806899" class="contact-phone">045 880 6899</a>
+            <a href="mailto:info@ravintolaolivia.com" class="contact-email">info@ravintolaolivia.com</a>
+          </address>
+        </div>
+
+        <div class="footer-block">
+          <h3 class="footer-heading" data-fi="Osoite" data-en="Address">Osoite</h3>
+          <address class="address">
+            Tiilipojanlenkki 2<br>
+            01720 Vantaa<br>
+            <span data-fi="Suomi" data-en="Finland">Suomi</span>
+          </address>
+          <a href="#kartta" class="map-link" data-fi="Näytä kartalla →" data-en="View on map →">Näytä kartalla →</a>
+        </div>
+      </div>
+
+      <p class="footer-copy">&copy; <span id="year"></span> Ravintola Olivia</p>
+    </div>
+  </footer>
+
+  <script src="data/lounas.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
