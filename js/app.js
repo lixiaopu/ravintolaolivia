@@ -53,9 +53,9 @@
       dateRange.textContent = resolveText(data.dateRange, lang);
     }
 
-    if (grid) {
+    if (grid && data.days) {
       grid.innerHTML = data.days.map(function (day) {
-        var dishes = day.dishes.map(function (dish) {
+        var dishes = (day.dishes || []).map(function (dish) {
           return '<li><span class="dish-name">' + resolveText(dish.name, lang) + '</span> ' +
             renderAllergens(dish.allergens) + '</li>';
         }).join('');
@@ -84,10 +84,23 @@
     btn.addEventListener('click', function () { setLang(btn.dataset.lang); });
   });
 
-  var saved;
-  try { saved = localStorage.getItem('olivia-lang'); } catch (e) {}
-  if (saved === 'en') setLang('en');
-  else renderLounas('fi');
+  // 支持 Google Sheets 异步加载数据的初始化函数
+  async function initApp() {
+    var saved;
+    try { saved = localStorage.getItem('olivia-lang'); } catch (e) {}
+    var targetLang = (saved === 'en') ? 'en' : 'fi';
+
+    // 如果启用了 Google Sheets 异步获取，先等待数据加载完毕
+    if (typeof window.loadLounasData === 'function') {
+      await window.loadLounasData();
+    }
+
+    // 加载完成后渲染
+    setLang(targetLang);
+  }
+
+  // 启动应用
+  initApp();
 
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
